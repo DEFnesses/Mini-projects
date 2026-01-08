@@ -9,17 +9,17 @@ const Calc = () => {
         <h2 className="text-2xl font-bold text-center mb-6">Калькулятор</h2>
         <div className="flex flex-col items-center gap-3">
           <input
-            className="h-10 text-xl text-right"
+            className="h-10 text-xl text-right focus:outline-none "
             id="value"
             defaultValue="0"
           ></input>
           <div className="flex gap-3">
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = (-parseFloat(digit.value) || 0).toString();
+                displayInput.value = (-parseFloat(displayInput.value) || 0).toString();
               }}
               className="w-14 h-16 bg-gray-500 text-white rounded-lg font-extrabold text-3xl"
             >
@@ -28,10 +28,10 @@ const Calc = () => {
 
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "7" : digit.value + "7";
+                displayInput.value = displayInput.value === "0" ? "7" : displayInput.value + "7";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -39,10 +39,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "8" : digit.value + "8";
+                displayInput.value = displayInput.value === "0" ? "8" : displayInput.value + "8";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -50,10 +50,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "9" : digit.value + "9";
+                displayInput.value = displayInput.value === "0" ? "9" : displayInput.value + "9";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -61,13 +61,13 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                firstNumber = parseFloat(digit.value);
+                firstNumber = parseFloat(displayInput.value);
                 currentOperation = "/";
                 waitingForSecondNumber = true;
-                digit.value = "0";
+                displayInput.value = "0";
               }}
               className="w-14 h-16 bg-gray-500 text-white rounded-lg font-extrabold text-3xl"
             >
@@ -75,10 +75,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = (parseFloat(digit.value) / 100 || 0).toString();
+                displayInput.value = (parseFloat(displayInput.value) / 100 || 0).toString();
               }}
               className="w-14 h-16 bg-gray-500 text-white rounded-lg font-extrabold text-3xl"
             >
@@ -89,11 +89,11 @@ const Calc = () => {
           <div className="flex gap-3">
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                if (digit.value !== "0") {
-                  digit.value = digit.value.slice(0, -1) || "0";
+                if (displayInput.value !== "0") {
+                  displayInput.value = displayInput.value.slice(0, -1) || "0";
                 }
               }}
               className="w-14 h-16 bg-gray-500 text-white rounded-lg font-extrabold text-3xl"
@@ -102,10 +102,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "4" : digit.value + "4";
+                displayInput.value = displayInput.value === "0" ? "4" : displayInput.value + "4";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -113,10 +113,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "5" : digit.value + "5";
+                displayInput.value = displayInput.value === "0" ? "5" : displayInput.value + "5";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -124,10 +124,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "6" : digit.value + "6";
+                displayInput.value = displayInput.value === "0" ? "6" : displayInput.value + "6";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -135,13 +135,13 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                firstNumber = parseFloat(digit.value);
+                firstNumber = parseFloat(displayInput.value);
                 currentOperation = "x";
                 waitingForSecondNumber = true;
-                digit.value = "0";
+                displayInput.value = "0";
               }}
               className="w-14 h-16 bg-gray-500 text-white rounded-lg font-extrabold text-3xl"
             >
@@ -149,13 +149,13 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                firstNumber = parseFloat(digit.value);
+                firstNumber = parseFloat(displayInput.value);
                 currentOperation = "-";
                 waitingForSecondNumber = true;
-                digit.value = "0";
+                displayInput.value = "0";
               }}
               className="w-14 h-16 bg-gray-500 text-white rounded-lg font-extrabold text-3xl"
             >
@@ -166,10 +166,10 @@ const Calc = () => {
           <div className="flex gap-3">
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = "0";
+                displayInput.value = "0";
               }}
               className="w-14 h-16 bg-red-600 text-white rounded-lg font-extrabold text-3xl"
             >
@@ -177,10 +177,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "1" : digit.value + "1";
+                displayInput.value = displayInput.value === "0" ? "1" : displayInput.value + "1";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -188,10 +188,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "2" : digit.value + "2";
+                displayInput.value = displayInput.value === "0" ? "2" : displayInput.value + "2";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -199,10 +199,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "3" : digit.value + "3";
+                displayInput.value = displayInput.value === "0" ? "3" : displayInput.value + "3";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -210,13 +210,13 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                firstNumber = parseFloat(digit.value);
+                firstNumber = parseFloat(displayInput.value);
                 currentOperation = "+";
                 waitingForSecondNumber = true;
-                digit.value = "0";
+                displayInput.value = "0";
               }}
               className="w-[120px] h-16 bg-gray-500 text-white rounded-lg font-extrabold text-3xl"
             >
@@ -227,10 +227,10 @@ const Calc = () => {
           <div className="flex gap-3">
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = "0";
+                displayInput.value = "0";
               }}
               className="w-14 h-16 bg-red-600 text-white rounded-lg font-extrabold text-3xl"
             >
@@ -238,10 +238,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value + "0";
+                displayInput.value = displayInput.value + "0";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -249,10 +249,10 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                digit.value = digit.value === "0" ? "00" : digit.value + "00";
+                displayInput.value = displayInput.value === "0" ? "00" : displayInput.value + "00";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -260,11 +260,11 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                if (digit.value.includes(".")) return;
-                digit.value = digit.value === "0" ? "0." : digit.value + ".";
+                if (displayInput.value.includes(".")) return;
+                displayInput.value = displayInput.value === "0" ? "0." : displayInput.value + ".";
               }}
               className="w-14 h-16 bg-gray-300 text-blue-900 rounded-lg font-extrabold text-3xl"
             >
@@ -272,22 +272,22 @@ const Calc = () => {
             </button>
             <button
               onClick={() => {
-                const digit = document.getElementById(
+                const displayInput = document.getElementById(
                   "value"
                 ) as HTMLInputElement;
-                const secondNumber = parseFloat(digit.value);
+                const secondNumber = parseFloat(displayInput.value);
                 switch (currentOperation) {
                   case "+":
-                    digit.value = (firstNumber + secondNumber).toString();
+                    displayInput.value = (firstNumber + secondNumber).toString();
                     break;
                   case "-":
-                    digit.value = (firstNumber - secondNumber).toString();
+                    displayInput.value = (firstNumber - secondNumber).toString();
                     break;
                   case "x":
-                    digit.value = (firstNumber * secondNumber).toString();
+                    displayInput.value = (firstNumber * secondNumber).toString();
                     break;
                   case "/":
-                    digit.value = (firstNumber / secondNumber || 0).toString();
+                    displayInput.value = (firstNumber / secondNumber || 0).toString();
                     break;
                 }
                 waitingForSecondNumber = false;
