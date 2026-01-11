@@ -1,5 +1,3 @@
-import React from "react";
-
 const Todo = () => {
   interface Todo {
     id: string;
@@ -9,9 +7,9 @@ const Todo = () => {
   return (
     <div>
       <div className="w-[900px] mx-auto bg-zinc-100 rounded-2xl shadow-xl p-8">
-        <h1 className="text-4xl font-black text-gray-900 text-center mb-8">
+        <h2 className="text-2xl font-bold text-center mb-6">
           📝 TODO
-        </h1>
+        </h2>
         <div className="flex mb-8">
           <input
             id="input"
@@ -30,12 +28,12 @@ const Todo = () => {
                 localStorage.setItem("tasks", JSON.stringify(tasks));
 
                 console.log("Сохранено в localStorage:", tasks);
-                
+
                 node.value = "";
               }
             }}
             id="add"
-            className="px-8 py-4 bg-blue-500 text-white text-xl font-bold rounded-xl shadow-lg "
+            className="px-8 py-4 bg-amber-500 text-white text-xl font-bold rounded-xl shadow-lg "
           >
             Добавить
           </button>
