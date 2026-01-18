@@ -6,14 +6,23 @@ type IsFiveProps = {
 
 let renderCount = 0;
 
-export default function IsFive({ value }: IsFiveProps) {
-  console.warn(`IsFive render: ${++renderCount}`);
+export default React.memo(
+  function IsFive({ value }: IsFiveProps) {
+    console.warn(`IsFive render: ${++renderCount}`);
 
-  const getResult = React.useMemo(() => {
-    let i = 0;
-    while (i < 600000000) i++;
-    return value === 5 ? `Это пять :)` : `Это не пять :(`;
-  }, [value]);
+    const getResult = React.useMemo(() => {
+      let i = 0;
+      while (i < 600000000) i++;
+      return value === 5 ? `Это пять :)` : `Это не пять :(`;
+    }, [value]);
 
-  return <h3>{getResult}</h3>;
-}
+    return <h3>{getResult}</h3>;
+  },
+  (prevProps, nextProps) => {
+    if (nextProps.value === 5) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+);

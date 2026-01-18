@@ -1,4 +1,3 @@
-import { count } from "node:console";
 import React from "react";
 
 type CountProps = {
@@ -11,7 +10,7 @@ const render: { count1: number; count2: number } = {
   count2: 0,
 };
 
-export default function Count({ id, value }: CountProps) {
+export default React.memo(function Count({ id, value }: CountProps) {
   console.warn(`Count${id} render: ${++render[`count${id as 1 | 2}`]}`);
 
   return (
@@ -19,4 +18,4 @@ export default function Count({ id, value }: CountProps) {
       <h1>{value}</h1>
     </div>
   );
-}
+});

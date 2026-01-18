@@ -8,6 +8,7 @@ const UseMemo = () => {
 
   return (
     <div className="flex justify-center items-center w-[420px] mx-auto mb-10 bg-zinc-100 rounded-2xl shadow-xl p-8 gap-4 flex-col">
+      <h2 className="text-2xl font-bold text-center">UseMemo</h2>
       <h5>Счётчик 1: </h5>
       <div>
         <button
