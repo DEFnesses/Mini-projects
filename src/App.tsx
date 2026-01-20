@@ -93,7 +93,7 @@ function App() {
           onClick={() => setShowUseCallback(!showUseCallback)}
           className="bg-violet-500 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded "
         >
-          useCallback
+          useCallback✅
         </button>
         {showUseCallback && <UseCallback />}
 
@@ -119,7 +119,7 @@ function App() {
             onClick={() => setShowTodoReact(!showTodoReact)}
             className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
           >
-            ToDo React
+            ToDo React✅
           </button>
           {showTodoReact && <TodoReact />}
         </div>
