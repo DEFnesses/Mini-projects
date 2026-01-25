@@ -11,6 +11,7 @@ import UseCallback from "./components/UseCallback";
 import Counter from "./components/Counter";
 import JarOfSweets from "./components/JarOfSweets";
 import TodoReact from "./components/TodoReact";
+import StateJson from "./components/StateJson";
 
 function App() {
   const [showCalc, setShowCalc] = useState<boolean>(false);
@@ -24,6 +25,7 @@ function App() {
   const [showCounter, setShowCounter] = useState<boolean>(false);
   const [showJar, setShowJar] = useState<boolean>(false);
   const [showTodoReact, setShowTodoReact] = useState<boolean>(false);
+  const [showStateJson, setShowStateJson] = useState<boolean>(false);
 
   return (
     <div className="App ">
@@ -97,32 +99,42 @@ function App() {
         </button>
         {showUseCallback && <UseCallback />}
 
-        <div className="flex flex-col justify-center items-center gap-5">
-          <h2 className="text-4xl font-bold mb-6">"Практика" React Hooks</h2>
-          <button
-            onClick={() => setShowJar(!showJar)}
-            className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Jar Of Sweets🛑
-          </button>
-          {showJar && <JarOfSweets />}
+        <h2 className="text-4xl font-bold mb-6">"Примеры" React Hooks</h2>
+        <button
+          onClick={() => setShowStateJson(!showStateJson)}
+          className="bg-violet-500 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded "
+        >
+          State Json✅
+        </button>
+        {showStateJson && <StateJson />}
 
-          <button
-            onClick={() => setShowCounter(!showCounter)}
-            className="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Counter✅
-          </button>
-          {showCounter && <Counter />}
+      </div>
 
-          <button
-            onClick={() => setShowTodoReact(!showTodoReact)}
-            className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
-          >
-            ToDo React✅
-          </button>
-          {showTodoReact && <TodoReact />}
-        </div>
+      <div className="flex flex-col justify-center items-center gap-5">
+        <h2 className="text-4xl font-bold mb-6">"Практика" React Hooks</h2>
+        <button
+          onClick={() => setShowJar(!showJar)}
+          className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Jar Of Sweets🛑
+        </button>
+        {showJar && <JarOfSweets />}
+
+        <button
+          onClick={() => setShowCounter(!showCounter)}
+          className="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Counter✅
+        </button>
+        {showCounter && <Counter />}
+
+        <button
+          onClick={() => setShowTodoReact(!showTodoReact)}
+          className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+        >
+          ToDo React✅
+        </button>
+        {showTodoReact && <TodoReact />}
       </div>
     </div>
   );

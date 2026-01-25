@@ -7,9 +7,7 @@ const Todo = () => {
   return (
     <div>
       <div className="w-[900px] mx-auto bg-zinc-100 rounded-2xl shadow-xl p-8">
-        <h2 className="text-2xl font-bold text-center mb-6">
-          📝 TODO
-        </h2>
+        <h2 className="text-2xl font-bold text-center mb-6">📝 TODO</h2>
         <div className="flex mb-8">
           <input
             id="input"

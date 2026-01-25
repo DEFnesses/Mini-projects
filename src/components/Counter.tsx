@@ -4,19 +4,19 @@ const Counter = () => {
   const [count, setCount] = React.useState<number>(0);
 
   const countSum = (step: number) => {
-    setCount((prevCount) => prevCount + step);
+    setCount((prev) => prev + step);
   };
 
   const countMulti = (step: number) => {
-    setCount((prevCount) => prevCount * step);
+    setCount((prev) => prev * step);
   };
 
   const countDevide = (step: number) => {
-    setCount((prevCount) => prevCount / step);
+    setCount((prev) => prev / step);
   };
 
   React.useEffect(() => {
-    console.log("Значение изменилось");
+    console.log("Значение count изменилось");
   }, [count]);
 
   return (
@@ -76,7 +76,7 @@ const Counter = () => {
           onClick={() => countDevide(10)}
           className="w-[85px] bg-slate-500 py-2 px-4 text-white rounded"
         >
-          /1000%
+          /10
         </button>
       </div>
       <div className="flex gap-4">
