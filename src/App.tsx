@@ -12,6 +12,7 @@ import Counter from "./components/Counter";
 import JarOfSweets from "./components/JarOfSweets";
 import TodoReact from "./components/TodoReact";
 import StateJson from "./components/StateJson";
+import Quiz from "./components/Quiz";
 
 function App() {
   const [showCalc, setShowCalc] = useState<boolean>(false);
@@ -26,6 +27,7 @@ function App() {
   const [showJar, setShowJar] = useState<boolean>(false);
   const [showTodoReact, setShowTodoReact] = useState<boolean>(false);
   const [showStateJson, setShowStateJson] = useState<boolean>(false);
+  const [showQuiz, setShowQuiz] = useState<boolean>(false);
 
   return (
     <div className="App ">
@@ -108,6 +110,13 @@ function App() {
         </button>
         {showStateJson && <StateJson />}
 
+        <button
+          onClick={() => setShowQuiz(!showQuiz)}
+          className="bg-violet-500 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded "
+        >
+          Quiz✅
+        </button>
+        {showQuiz && <Quiz />}
       </div>
 
       <div className="flex flex-col justify-center items-center gap-5">
