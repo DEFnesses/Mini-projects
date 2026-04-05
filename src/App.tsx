@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Html from "./components/Html";
 import Calc from "./components/Calc";
 import Todo from "./components/Todo";
 import Convertor from "./components/Convertor";
@@ -15,6 +16,7 @@ import StateJson from "./components/StateJson";
 import Quiz from "./components/Quiz";
 
 function App() {
+  const [showHtml, setShowHtml] = useState<boolean>(false)
   const [showCalc, setShowCalc] = useState<boolean>(false);
   const [showTodo, setShowTodo] = useState<boolean>(false);
   const [showConvertor, setShowConvertor] = useState<boolean>(false);
@@ -60,6 +62,14 @@ function App() {
       </div>
 
       <div className="flex flex-col justify-center items-center gap-5">
+        <h2 className="text-4xl font-bold mb-6">HTML</h2>
+
+        <button
+        onClick={() => setShowHtml(!showHtml)}
+        className="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded "
+        >Формы</button>
+        {showHtml && <Html />}
+
         <h2 className="text-4xl font-bold mb-6">"Теория" React Hooks</h2>
         <button
           onClick={() => setShowUseState(!showUseState)}
